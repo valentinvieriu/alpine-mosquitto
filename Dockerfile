@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.4
 RUN addgroup -S mosquitto && \
     adduser -S -H -h /var/empty -s /sbin/nologin -D -G mosquitto mosquitto
 
