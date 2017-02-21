@@ -14,7 +14,7 @@ script:
 # build image
 - docker build -t $QNAME:build .
 # test image
-- docker run $QNAME:build node --version
+- docker run $QNAME:build uname -a
 # push image
 - >
   if [ "$TRAVIS_BRANCH" == "master" ]; then
