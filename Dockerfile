@@ -3,7 +3,8 @@ RUN addgroup -S mosquitto && \
     adduser -S -H -h /var/empty -s /sbin/nologin -D -G mosquitto mosquitto
 
 ENV PATH=/usr/local/bin:/usr/local/sbin:$PATH
-ENV MOSQUITTO_VERSION=v1.4.10 
+ARG MOSQUITTO_VERSION=v1.4.12
+ENV MOSQUITTO_VERSION $MOSQUITTO_VERSION
 
 COPY run.sh /
 RUN buildDeps='git alpine-sdk libwebsockets-dev c-ares-dev util-linux-dev curl-dev libxslt docbook-xsl'; \

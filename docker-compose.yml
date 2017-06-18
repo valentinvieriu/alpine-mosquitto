@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  mosquito:
+    # image: valentinvieriu/alpine-mosquitto:1.4.12
+    image: valentinvieriu/alpine-mosquitto:latest
+    build:
+      context: .
+      args:
+        - MOSQUITTO_VERSION=v1.4.12
+    ports: 
+      - 1883:1883
+      - 9000:9000
